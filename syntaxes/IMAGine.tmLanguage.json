@@ -1,0 +1,88 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "IMAGine",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#constant"
+		}
+	],
+	"repository": {
+		
+		"comment":{
+			"name": "comment.block.IMAGine",
+			"begin": "//",
+			"end": "(?=\n)"
+		},
+
+		"constant": {
+			"patterns": [{
+				"match": "\\b([0-9]+)\\b",
+				"name" : "constant.numeric.integer.IMAGine"
+			},{
+				"match": "\\b([0-9]+\\.[0-9]+)\\b",
+				"name" : "constant.numeric.real.IMAGine"
+			}]
+		},
+
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.IMAGine",
+				"match": "\\b(if|while|for|return|do|then|else|foreach|def)\\b"
+			},{
+				"match": "!=|<=|>=|==|<|>",
+        		"name" : "keyword.comparison.IMAGine"
+			},{
+				"match": "&&|(\\|\\|)",
+        		"name": "keyword.logical.IMAGine"
+			},{
+				"match": "%|\\*|/|-|(\\|)|\\+",
+        		"name": "keyword.arithmetic.IMAGine"
+			},{
+				"match": "=|:",
+        		"name": "keyword.assignment.IMAGine"
+			}]
+		},
+	
+		"variable": {
+			"patterns": [{
+				"name": "variable.language.IMAGine",
+				"match": "\\b((img|list))\\b"
+			}]
+		},
+
+		"function": {
+			"patterns": [{
+				"name": "entity.name.function.IMAGine",
+				"match": "\\b(print|push|get|pop|remove|width|height|bands|min|man|average|invert|histEq|normalise|canny|sobel|sharpen|convert|convertColorSpace|add|subtract|rotate|flip|gaussianBlur|smartCrop|zoom|crop|extractBand|showImage|length)\\b"
+			}]
+		},
+		
+		"strings": {
+			"name": "string.quoted.double.IMAGine",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.IMAGine",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.IMAGine"
+}

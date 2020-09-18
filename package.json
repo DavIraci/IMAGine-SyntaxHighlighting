@@ -1,0 +1,39 @@
+{
+    "name": "imagine",
+    "displayName": "IMAGine",
+    "publisher": "davideiraci27",
+    "description": "A LANGUAGE TO ADJUST OR MODIFY YOUR IMAGES LIKE YOU ARE TYPING A LETTER",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "IMAGine",
+                "aliases": [
+                    "IMAGine",
+                    "ig"
+                ],
+                "extensions": [
+                    ".ig"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "IMAGine",
+                "scopeName": "source.IMAGine",
+                "path": "./syntaxes/ig.tmLanguage.json"
+            }
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DavIraci"
+    }
+}
